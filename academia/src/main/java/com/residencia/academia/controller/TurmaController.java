@@ -81,5 +81,5 @@ public class TurmaController {
 		turmaService.deleteById(id);
 		return new ResponseEntity<>("", HttpStatus.OK);
 	}
-
+	
 }

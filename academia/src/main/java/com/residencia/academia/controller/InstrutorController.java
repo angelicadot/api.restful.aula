@@ -43,9 +43,6 @@ public class InstrutorController {
 	
 	@GetMapping("/{id}")
 	public ResponseEntity<Instrutor> findInstrutorById(@PathVariable Integer id) {
-//		return instrutorService.findInstrutorById(id);
-		// return new ResponseEntity<>(instrutorService.findInstrutorById(id),
-		// HttpStatus.OK);
 		Instrutor instrutor = instrutorService.findInstrutorById(id);
 		if(null==instrutor) {
 			return new ResponseEntity<>(null,HttpStatus.NOT_FOUND);
@@ -74,6 +71,9 @@ public class InstrutorController {
 		return new ResponseEntity<>(novoIinstrutor,HttpStatus.OK);
 	}
 
+
+	
+	
 	@DeleteMapping("/{id}")
 	public ResponseEntity<String> delete(@PathVariable Integer id) {
 		instrutorService.deleteInstrutor(id);

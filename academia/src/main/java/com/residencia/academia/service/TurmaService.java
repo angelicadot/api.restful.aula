@@ -1,12 +1,13 @@
 package com.residencia.academia.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.residencia.academia.DTO.InstrutorDTO;
 import com.residencia.academia.DTO.TurmaDTO;
+import com.residencia.academia.entity.Instrutor;
 import com.residencia.academia.entity.Turma;
 import com.residencia.academia.repository.TurmaRepository;
 
@@ -14,6 +15,12 @@ import com.residencia.academia.repository.TurmaRepository;
 public class TurmaService {
 	@Autowired
 	TurmaRepository turmaRepository;
+	
+	@Autowired
+	private AtividadeService atividadeService;
+	
+	@Autowired
+	InstrutorService instrutorService;
 
 	public List<Turma> findAllTurma() {
 		return turmaRepository.findAll();
@@ -59,9 +66,9 @@ public class TurmaService {
 		turmaDTO.setDuracaoTurma(turma.getDuracaoTurma());
 		turmaDTO.setHorarioTurma(turma.getHorarioTurma());
 		turmaDTO.setIdTurma(turma.getIdTurma());
-		turmaDTO.setInstrutor(turma.getInstrutor());
-		turmaDTO.setAtividade(turma.getAtividade());
-		return turmaDTO;
+		InstrutorDTO instrutor = instrutorService.findInstrutorDTOById(turma.getInstrutor().getIdInstrutor());
+		turmaDTO.setInstrutorDTO(instrutor);
+			return turmaDTO;
 	}
 
 	private Turma converterDTOParaEntidade(TurmaDTO turmaDTO) {
@@ -71,9 +78,9 @@ public class TurmaService {
 		turma.setDuracaoTurma(turmaDTO.getDuracaoTurma());
 		turma.setHorarioTurma(turmaDTO.getHorarioTurma());
 		turma.setIdTurma(turmaDTO.getIdTurma());
-		turma.setInstrutor(turmaDTO.getInstrutor());
-		turma.setAtividade(turmaDTO.getAtividade());
-		return turma;
+		Instrutor instrutor = instrutorService.findInstrutorById(turmaDTO.getInstrutorDTO().getIdInstrutor());
+		turma.setInstrutor(instrutor);
+			return turma;
 	}
 
-	}
+}

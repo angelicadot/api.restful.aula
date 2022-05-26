@@ -15,9 +15,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "turma")
-// obs//@JsonIdentityInfo(
-     //	    generator = ObjectIdGenerators.PropertyGenerator.class,
-    //	    property = "turmaId")
+//@JsonIdentityInfo(
+//	    generator = ObjectIdGenerators.PropertyGenerator.class,
+//	    property = "turmaId")
 public class Turma {
 
 	@Id

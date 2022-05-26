@@ -16,7 +16,7 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @Entity
 @Table(name = "atividade")
-           // obs:    //@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "atividadeId")
+//@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "atividadeId")
 public class Atividade {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

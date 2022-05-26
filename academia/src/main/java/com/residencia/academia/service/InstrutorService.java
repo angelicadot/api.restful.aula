@@ -31,7 +31,7 @@ public class InstrutorService {
 		return instrutorDTO;
 	}
 
-	private InstrutorDTO converterEntidadeParaDTO(Instrutor instrutor) {
+	public InstrutorDTO converterEntidadeParaDTO(Instrutor instrutor) {
 		InstrutorDTO instrutorDTO = new InstrutorDTO();
 		instrutorDTO.setDataNascimento(instrutor.getDataNascimento());
 		instrutorDTO.setIdInstrutor(instrutor.getIdInstrutor());
@@ -72,7 +72,7 @@ public class InstrutorService {
 		return instrutorDTO;
 	}
 
-	private Instrutor converterDTOParaEntidade(InstrutorDTO instrutorDTO) {
+	public Instrutor converterDTOParaEntidade(InstrutorDTO instrutorDTO) {
 		Instrutor instrutor = new Instrutor();
 		instrutor.setDataNascimento(instrutorDTO.getDataNascimento());
 		instrutor.setIdInstrutor(instrutorDTO.getIdInstrutor());

@@ -16,9 +16,9 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(name = "instrutor")
-     // obs: //@JsonIdentityInfo(
-    //        generator = ObjectIdGenerators.PropertyGenerator.class,
-   //        property = "idInstrutor")
+//@JsonIdentityInfo(
+//        generator = ObjectIdGenerators.PropertyGenerator.class,
+//        property = "idInstrutor")
 public class Instrutor {
 
 	@Id
